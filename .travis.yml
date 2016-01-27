@@ -1,7 +1,16 @@
 language: c
 script:
- - bash build.sh
+- bash build.sh
 addons:
   apt:
     packages:
     - liblzma-dev
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: vjfmoOkMG/YCzdrtj0kgye+w4d+32SR9ZvuKRHBKCWg7S1e+FegNA2NElHoVx01WCZ9YGjbCaNwV8HMCK6JacMg/QXxQlnO56Mlg0RPSb0sAbNNplPqvMiZX7Zjtr/S59coBjilgr9Du916RaUf+1qHTw6ddJ/4BImxAxcQMMohM+3rsLl376zEH7joiPUFYtBqT6Xa/5bTlRZqamNZpQ8RGI28RJ3LE1ndsYOCQWYn87mdFtPPRTKL0LaUH0GEsHRei8LvauQ4FvuEjBcB8fZxx8uuUc/9wHYNMdXxoohT085U70x0aC2brPBv3vZvDtUWuNRbxw8IghrvEDhLHsqe1gM2u+mpl68/b90W7eH6aYataGcuOLqoRLD9l1vODF2izVcJND2mhC5jjepzvGEVxUH3Zvul9Y/Xrjk5uO2T7h46GXAuGMWq1mePx/vnJ6W866z2T/sIPHmLjJgl1TNm/IgKzyK5OPNVtbUDNRizCmL7tcWfPkFuCOIN3EBDHKvoT8bLOjeukv0ji7qOmz5B+oz0QWVJQFJOI70/TtKpPd1VF5BvPVSdBdXszK+wNBpDka7YzNl0K+nN/+1xMKNfKTW9QGoBGSX0W99Mv84fGQ6r/tLW5dQAJDvGO5Vfd6SgvymjzUyt1PLsPyeQdDZ/Ds9gZLInEoCGKvAjlzAg=
+  file: ipxe/src/bin/undionly.kpxe
+  on:
+    tags: true
+    repo: davidmnoriega/ipxe_serial
