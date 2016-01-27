@@ -1,0 +1,7 @@
+language: c
+script:
+ - build.sh
+addons:
+  apt:
+    sources:
+    - liblzma-dev
